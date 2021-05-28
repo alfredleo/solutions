@@ -5,7 +5,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
-
+/*
+run: go test algorithm_test.go
+*/
 func maxOnesAfterRemoveItem(arr []byte) uint {
 
 	max, first, second, countZeroes := 0, 0, 0, 0
