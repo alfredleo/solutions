@@ -22,16 +22,6 @@ func TestSomething(t *testing.T) {
 	assert.True(maxOnesAfterRemoveItem([]byte{1, 1, 0, 1, 1, 0, 1, 1, 1, 0}) == 5)
 }
 
-func TestIsPalindromeLoopWithPalindromeText(t *testing.T) {
-
-	//assert(maxOnesAfterRemoveItem([0,0]) == 0)
-	//assert(maxOnesAfterRemoveItem[0,1] == 1)
-	//assert(maxOnesAfterRemoveItem[1,0] == 1)
-	//assert(maxOnesAfterRemoveItem[1,1] == 1)
-	//assert(maxOnesAfterRemoveItem[1, 1, 0, 1, 1] == 4)
-	//assert(maxOnesAfterRemoveItem[1, 1, 0, 1, 1, 0, 1, 1, 1] == 5)
-	//assert(maxOnesAfterRemoveItem[1, 1, 0, 1, 1, 0, 1, 1, 1, 0] == 5)
-}
 
 /*
 I Задача о длиной цепочке единиц ⭐⭐
