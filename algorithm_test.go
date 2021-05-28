@@ -1,16 +1,55 @@
 package main
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func maxOnesAfterRemoveItem(arr []byte) uint {
 
-	return 0
+	max, first, second, countZeroes := 0, 0, 0, 0
+	for _, element := range arr {
+		if element == 1 {
+			first++
+			countZeroes = 0
+		} else {
+			// we have one pair of first and second
+			max = checkMax(first, second, max)
+			// exchange first 1 count to second variable
+			second = first
+			first = 0
+
+			countZeroes++
+			if countZeroes > 1 {
+				// reset counters if we have 0,0 or more
+				first, second, countZeroes = 0, 0, 0
+			}
+		}
+		//fmt.Println(first, second)
+	}
+
+	// fix corner case with small input or side 0s
+	max = checkMax(first, second, max)
+
+	// fix corner case with all 1s
+	if len(arr) == max {
+		max--
+	}
+
+	fmt.Println(max)
+	return uint(max)
 }
 
-func TestSomething(t *testing.T) {
+func checkMax(first int, second int, max int) int {
+	sum := first + second
+	if max < sum {
+		max = sum
+	}
+	return max
+}
+
+func TestLongChainAlgorithm(t *testing.T) {
 	assert := assert.New(t)
 
 	assert.True(maxOnesAfterRemoveItem([]byte{0, 0}) == 0)
